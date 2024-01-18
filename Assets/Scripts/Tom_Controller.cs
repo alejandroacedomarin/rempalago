@@ -6,8 +6,17 @@ using UnityEngine;
 public class Tom_Controller : MonoBehaviour
 {
     public float moveSpeed;
+
     public bool isMoving;
+
     public Vector2 input;
+
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -16,8 +25,17 @@ public class Tom_Controller : MonoBehaviour
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
-            if(input != Vector2.zero)
+            Debug.Log("Input.x: "+input.x);
+            Debug.Log("Input.y: " + input.y);
+
+            
+
+
+            if (input != Vector2.zero)
             {
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
+
                 var targetPos = transform.position;
                 targetPos.x += input.x;
                 targetPos.y += input.y;
@@ -26,6 +44,7 @@ public class Tom_Controller : MonoBehaviour
             }
 
         }
+        animator.SetBool("isMoving", isMoving);
     }
 
     IEnumerator Move(Vector3 targetPos)
