@@ -51,6 +51,9 @@ TagManager:
   - name: Vegetation
     uniqueID: 1375374737
     locked: 0
+  - name: DungeonWater
+    uniqueID: 103374649
+    locked: 0
   - name: Character
     uniqueID: 937913651
     locked: 0
