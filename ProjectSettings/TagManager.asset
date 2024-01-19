@@ -57,3 +57,9 @@ TagManager:
   - name: Character
     uniqueID: 937913651
     locked: 0
+  - name: Interact
+    uniqueID: 1194884415
+    locked: 0
+  - name: ParedesSuper
+    uniqueID: 2169349603
+    locked: 0

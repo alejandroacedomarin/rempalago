@@ -9,6 +9,9 @@ public class Tom_Controller : MonoBehaviour
 
     public bool isMoving;
 
+    private RaycastHit2D hity, hitx;
+
+    private BoxCollider2D boxCollider;
     public Vector2 input;
 
     private Animator animator;
@@ -18,6 +21,8 @@ public class Tom_Controller : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
+
     }
 
     private void Update()
@@ -67,10 +72,17 @@ public class Tom_Controller : MonoBehaviour
 
     private bool IsWalkable(Vector3 targetPos) 
     {
-        if(Physics2D.OverlapCircle(targetPos,0.2f,solidObjectsLayer) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.1f, solidObjectsLayer) != null)
         {
             return false;
         }
         return true;
+        //hitx = Physics2D.BoxCast(targetPos, boxCollider.size, 0, new Vector2(0, targetPos.x), Mathf.Abs(targetPos.x * Time.deltaTime), LayerMask.GetMask("SolidObjects"));
+        //hity = Physics2D.BoxCast(targetPos, boxCollider.size, 0, new Vector2(0, targetPos.y), Mathf.Abs(targetPos.y * Time.deltaTime), LayerMask.GetMask("SolidObjects"));
+        //if(hitx.collider!=null || hity.collider!=null)
+        //{
+        //    return false;
+        //}
+        //return true;
     }
 }
