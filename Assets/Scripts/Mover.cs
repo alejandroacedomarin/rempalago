@@ -60,7 +60,7 @@ public abstract class Mover : Brawler
 
             
         }
-        animator.SetBool("isMoving", isMoving);
+        //animator.SetBool("isMoving", isMoving);
     }
 
     IEnumerator Move(Vector3 targetPos)
