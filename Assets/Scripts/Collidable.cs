@@ -28,6 +28,6 @@ public class Collidable : MonoBehaviour
     }
     protected virtual void OnCollide(Collider2D collider)
     {
-        Debug.Log(collider.name);   
+        Debug.Log("On collide not omplemented"+collider.name);   
     }
 }

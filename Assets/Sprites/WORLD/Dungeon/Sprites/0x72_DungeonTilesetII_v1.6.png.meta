@@ -5793,7 +5793,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.6_270
+      name: Enemy_02
       rect:
         serializedVersion: 2
         x: 416
@@ -7326,7 +7326,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.6_343
+      name: Enemy_03
       rect:
         serializedVersion: 2
         x: 368
@@ -13361,7 +13361,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -13369,6 +13369,111 @@ TextureImporter:
       bones: []
       spriteID: 4bde680cb87eb1842acbff904c5e5f16
       internalID: 1966681225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Big_Sword
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 417
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14abf910d1e3cea4cbdb57ef662dfc00
+      internalID: -1675698854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large_Sword
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 385
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5635b65b503412f4d9d47b0ba0558f6c
+      internalID: 94440383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rusty_Sword
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 481
+        width: 12
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4eada2924f0e4a4bb83856f680688ec
+      internalID: 1903389688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_0
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 360
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb334d9109afd9f4194118e3ac79839c
+      internalID: -290861676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_01
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 384
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af89ade4287c4154b99ff1563765af3b
+      internalID: -231515876
       vertices: []
       indices: 
       edges: []
@@ -13575,7 +13680,6 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.6_268: -250623846
       0x72_DungeonTilesetII_v1.6_269: 1106770295
       0x72_DungeonTilesetII_v1.6_27: -1910554436
-      0x72_DungeonTilesetII_v1.6_270: 1331321835
       0x72_DungeonTilesetII_v1.6_271: 325158154
       0x72_DungeonTilesetII_v1.6_272: -97281066
       0x72_DungeonTilesetII_v1.6_273: -1320541149
@@ -13656,7 +13760,6 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.6_340: -1952880160
       0x72_DungeonTilesetII_v1.6_341: 523075490
       0x72_DungeonTilesetII_v1.6_342: -266576410
-      0x72_DungeonTilesetII_v1.6_343: -1525112990
       0x72_DungeonTilesetII_v1.6_344: 126640716
       0x72_DungeonTilesetII_v1.6_345: 538081253
       0x72_DungeonTilesetII_v1.6_346: 348055075
@@ -14013,8 +14116,15 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.6_97: 689289697
       0x72_DungeonTilesetII_v1.6_98: -433630463
       0x72_DungeonTilesetII_v1.6_99: 1730286949
+      Big_Sword: -1675698854
       Chest_0: 1966681225
       Chest_01: 1334039553
+      Enemy_0: -290861676
+      Enemy_01: -231515876
+      Enemy_02: 1331321835
+      Enemy_03: -1525112990
+      Large_Sword: 94440383
+      Rusty_Sword: 1903389688
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
