@@ -5,7 +5,7 @@ using UnityEngine.Video;
 
 public class MovingObject : MonoBehaviour
 {
-    private VidaJugador vidaScript;
+   /* private VidaJugador vidaScript;
 
     private Rigidbody2D rb2D;
     private BoxCollider2D boxcoll;
@@ -98,5 +98,5 @@ public class MovingObject : MonoBehaviour
         {
             vidaScript.increaseHealth(10);
         }
-    }
+    }*/
 }
