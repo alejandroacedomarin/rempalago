@@ -24,7 +24,6 @@ public abstract class Mover : Brawler
 
     }
 
-    
     protected virtual void UpdateMotorPlayer(Vector2 input)
     {
         if (!isMoving)
@@ -41,8 +40,6 @@ public abstract class Mover : Brawler
                 if (IsWalkable(targetPos))
                     StartCoroutine(Move(targetPos));
 
-
-
             }
         }
         animator.SetBool("isMoving", isMoving);
@@ -52,12 +49,8 @@ public abstract class Mover : Brawler
         if (!isMoving)
         {
             
-
                 if (IsWalkable(inputt))
                     StartCoroutine(Move(inputt));
-
-
-
             
         }
         animator.SetBool("isMoving", isMoving);
