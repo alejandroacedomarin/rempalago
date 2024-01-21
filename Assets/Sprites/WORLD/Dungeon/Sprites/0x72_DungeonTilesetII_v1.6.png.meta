@@ -9888,7 +9888,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.6_465
+      name: Menu_Button
       rect:
         serializedVersion: 2
         x: 320
@@ -13466,7 +13466,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -13894,7 +13894,6 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.6_462: -1073839073
       0x72_DungeonTilesetII_v1.6_463: -1771998005
       0x72_DungeonTilesetII_v1.6_464: -1681923364
-      0x72_DungeonTilesetII_v1.6_465: -1985861291
       0x72_DungeonTilesetII_v1.6_466: -603521970
       0x72_DungeonTilesetII_v1.6_467: -95058808
       0x72_DungeonTilesetII_v1.6_468: -599930507
@@ -14124,6 +14123,7 @@ TextureImporter:
       Enemy_02: 1331321835
       Enemy_03: -1525112990
       Large_Sword: 94440383
+      Menu_Button: -1985861291
       Rusty_Sword: 1903389688
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
