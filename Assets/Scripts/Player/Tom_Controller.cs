@@ -5,19 +5,40 @@ using UnityEngine;
 
 public class Tom_Controller : Mover
 {
+<<<<<<< HEAD
     //protected override void Awake()
     //{
     //    base.Awake();
     //    DontDestroyOnLoad(gameObject);
     //}
+=======
+    private Weapons weapon;
+    private Vector2 currentDirection;
+>>>>>>> 30e6390b1b71b00e62d3276001be104e2a7d3ad8
     private void FixedUpdate()
     {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
-            UpdateMotorPlayer(input);
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
+        UpdateMotorPlayer(input);
+
     }
-
-
+    private void Start()
+    {
+        weapon=GetComponent<Weapons>();
+    }
+    private void HandleInput()
+    {
+        currentDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (Input.GetButtonDown("Fire1"))
+        {
+            weapon.Swing(currentDirection);
+        }
+    }
+    private void Update()
+    {
+       HandleInput();
+    }
+   
     //public float moveSpeed;
 
     //public bool isMoving;
