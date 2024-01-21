@@ -21,9 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 4ad1b66531fd87942a7b4b707527ad56, type: 2}
-    - time: 0.083333336
       value: {fileID: 21300000, guid: edaa98e7f05dcb246a5fd94dbdf83ca7, type: 3}
+    - time: 0.083333336
+      value: {fileID: 21300000, guid: 4ad1b66531fd87942a7b4b707527ad56, type: 2}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,8 +46,8 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 4ad1b66531fd87942a7b4b707527ad56, type: 2}
     - {fileID: 21300000, guid: edaa98e7f05dcb246a5fd94dbdf83ca7, type: 3}
+    - {fileID: 21300000, guid: 4ad1b66531fd87942a7b4b707527ad56, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -72,11 +72,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.083333336
-    functionName: destroyBullet
-    data: 
-    objectReferenceParameter: {fileID: 11500000, guid: b3676f7f6d2f3d24ea343bad8fc4fd74, type: 3}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

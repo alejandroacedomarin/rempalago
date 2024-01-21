@@ -13,7 +13,6 @@ public abstract class Mover : Brawler
     protected BoxCollider2D boxCollider;
     public Vector2 input;
 
-    public GameObject BulletPrefab;
     private float lastShoot;
 
 

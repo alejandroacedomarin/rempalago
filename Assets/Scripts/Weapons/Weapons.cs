@@ -14,10 +14,14 @@ public class Weapons : Collidable
 
     private float cooldown;
     private float lastSwing;
+
+    public GameObject bulletPrefab;
+
     protected override void Start()
     {
         base.Start();
         spriteRenderer= GetComponent<SpriteRenderer>();
+
     }
     protected override void Update()
     {
@@ -28,7 +32,10 @@ public class Weapons : Collidable
             if(Time.time-lastSwing>cooldown)
             {
                 lastSwing = Time.time;
-                Swing();
+
+
+                Vector2 currentDirection = GetComponent<Rigidbody2D>().velocity.normalized;
+                Swing(currentDirection);
             }
         }
     }
@@ -46,13 +53,23 @@ public class Weapons : Collidable
                 origin = transform.position,
                 push = weaponPush
             };
-            collider.SendMessage("RecibirDaño", dmg);
+            collider.SendMessage("RecibirDaï¿½o", dmg);
             Debug.Log(collider.name);
         }
         
     }
-    private void Swing()
+    public void Swing(Vector2 direction)
     {
-        Debug.Log("Swing!");
+        Debug.Log("Swing! Direction: " + direction);
+        Vector3 spawnPosition =transform.position+new Vector3(direction.x, direction.y, 0);
+        GameObject bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
+        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+
+        BulletScript bulletScript=bullet.GetComponent<BulletScript>();
+        
+        if( bulletScript != null )
+        {
+            bulletScript.setDirection(direction);
+        }
     }
 }

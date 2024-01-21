@@ -6,25 +6,27 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    private Rigidbody2D Rigidbody2D;
-    public float speed=10;
+    private Rigidbody2D rigidbody2D;
+    public float speed=100000;
 
     private Vector2 direction;
+
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody2D=GetComponent<Rigidbody2D>();
+        rigidbody2D=GetComponent<Rigidbody2D>();
     }
 
-    public void setDirection(Vector2 direccion)
-    {
-        direction = direccion;
-    }
     private void FixedUpdate()
     {
-        Rigidbody2D.velocity = direction*speed;
+        rigidbody2D.velocity = direction * speed;
     }
-    public void destroyBullet()
+    public void setDirection(Vector2 dir)
+    {
+        direction = dir.normalized;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
     }

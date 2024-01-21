@@ -48,7 +48,6 @@ public class Enemy : Mover
             {
                 UpdateMotorEnemy(startingPosition-transform.position);
             }
-            
         }
         else
         {
