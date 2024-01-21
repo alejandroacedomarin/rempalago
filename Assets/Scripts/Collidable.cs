@@ -7,7 +7,7 @@ public class Collidable : MonoBehaviour
 {
     public ContactFilter2D filter;
     private BoxCollider2D boxCollider;
-    private Collider2D[] hits = new Collider2D[10]; 
+    private Collider2D[] hits = new Collider2D[1000]; 
     protected virtual void Start()
     {
         boxCollider= GetComponent<BoxCollider2D>();

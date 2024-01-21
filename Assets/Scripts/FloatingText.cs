@@ -10,6 +10,7 @@ public class FloatingText
     public Vector3 motion;
     public float duration;
     public float lastShow;
+    
 
     public void Show()
     {

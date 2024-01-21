@@ -14,6 +14,7 @@ public class Chest : Collectable
             GetComponent<SpriteRenderer>().sprite = afterChest;
             GameManager.instance.ShowText("+" + cantidadDinero + " coins!", 20, Color.yellow, transform.position, Vector3.up * 50, 0.5f);
             Debug.Log("Dinerito: "+ cantidadDinero);
+            GameManager.instance.dinerito += cantidadDinero;
         }
         
     }

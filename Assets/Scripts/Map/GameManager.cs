@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public List<int> xpTables;
 
     public Tom_Controller player;
-
+    public Weapons weapon;
     public FTManager floatingTextManager;
 
     public int dinerito=5;
@@ -36,6 +36,20 @@ public class GameManager : MonoBehaviour
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
+    }
+    public bool TryUpgradeWeapon()
+    {
+        if(weaponPrices.Count<=weapon.weaponLevel)
+        {
+            return false;
+        }
+        if(dinerito <= weaponPrices[weapon.weaponLevel])
+        {
+            dinerito -= weaponPrices[weapon.weaponLevel];
+            weapon.UpgradeWeapon();
+            return true;
+        }
+        return false;
     }
 
 

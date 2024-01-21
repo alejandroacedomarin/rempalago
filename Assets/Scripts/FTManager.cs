@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FTManager : MonoBehaviour
@@ -9,7 +11,17 @@ public class FTManager : MonoBehaviour
     public GameObject textPrefab;
 
     private List<FloatingText> floatingTexts = new List<FloatingText>();
+    //public static FTManager instance;
+    private void Awake()
+    {
 
+        DontDestroyOnLoad(gameObject);
+    }
+    //protected override void Awake()
+    //{
+    //    base.Awake();
+    //    DontDestroyOnLoad(gameObject);
+    //}
     private void Update()
     {
         foreach(FloatingText txt in floatingTexts)
