@@ -13,6 +13,10 @@ public abstract class Mover : Brawler
     protected BoxCollider2D boxCollider;
     public Vector2 input;
 
+    public GameObject BulletPrefab;
+    private float lastShoot;
+
+
     protected Animator animator;
 
     public LayerMask solidObjectsLayer;
@@ -41,9 +45,40 @@ public abstract class Mover : Brawler
                     StartCoroutine(Move(targetPos));
 
             }
+            /*if (Input.GetButtonDown("Fire1")&&(Time.time>lastShoot+0.25f))
+            {
+                Fire();
+                lastShoot = Time.time;
+            }*/
         }
         animator.SetBool("isMoving", isMoving);
     }
+
+   /* protected virtual void Fire()
+    {
+        Vector3 direction;
+
+        if (input.x > 0)
+        {
+            direction = Vector2.right;
+        }
+        else if (input.x < 0)
+        {
+            direction = Vector2.left;
+        }
+        else if (input.y > 0) 
+        {
+            direction = Vector2.up;
+        }
+        else
+        {
+            direction = Vector2.down;
+        }
+
+       GameObject bullet = Instantiate(BulletPrefab, transform.position+direction*0.1f, Quaternion.identity);
+        bullet.GetComponent<BulletScript>().setDirection(direction);
+    }*/
+
     protected virtual void UpdateMotorEnemy(Vector3 inputt)
     {
         if (!isMoving)
