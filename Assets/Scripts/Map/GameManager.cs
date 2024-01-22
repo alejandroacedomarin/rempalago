@@ -37,6 +37,46 @@ public class GameManager : MonoBehaviour
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
+    private void Update()
+    {
+        GetCurrentLev();
+    }
+    public int GetCurrentLev()
+    {
+        int r = 0;
+        int ad = 0;
+        while (experience >= ad)
+        {
+            ad += xpTables[r];
+            r++;
+            if (r == xpTables.Count)
+            {
+                return r;
+            }
+        }
+        return r;
+    }
+    public int GetXpToLevel(int level)
+    {
+        int r = 0;
+        int xp = 0;
+        while (r < level)
+        {
+            xp += xpTables[r];
+            r++;
+        }
+        return xp;
+    }
+
+    public void DarXp(int xp)
+    {
+        int currLev = GetCurrentLev();
+        experience += xp;
+        if(currLev < GetCurrentLev())
+        {
+            //LevelUp();
+        }
+    }
     public bool TryUpgradeWeapon()
     {
         if(weaponPrices.Count<=weapon.weaponLevel)
@@ -59,7 +99,7 @@ public class GameManager : MonoBehaviour
         s += "0" + "|";
         s += dinerito.ToString()+"|";
         s += experience.ToString()+"|";
-        s += "0";
+        s += weapon.weaponLevel.ToString();
 
         PlayerPrefs.SetString("SaveState", s);
     }
@@ -74,7 +114,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(data[0]+"|"+ data[1] + "|" + data[2] + "|" + data[3]);
         dinerito = int.Parse(data[1]);
         experience = int.Parse(data[2]);
-
+        weapon.SetWeaponLevel(int.Parse(data[3]));
 
         Debug.Log("LoadState");
     }

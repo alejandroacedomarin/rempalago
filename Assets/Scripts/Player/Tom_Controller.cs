@@ -14,6 +14,12 @@ public class Tom_Controller : Mover
 
     private Weapons weapon;
     private Vector2 currentDirection;
+    private SpriteRenderer spriteRenderer;
+    protected override void Awake()
+    {
+        base.Awake();
+        spriteRenderer= GetComponent<SpriteRenderer>(); 
+    }
 
     private void FixedUpdate()
     {
@@ -22,22 +28,26 @@ public class Tom_Controller : Mover
         UpdateMotorPlayer(input);
 
     }
-    private void Start()
+    public void CambiarAvatar(int sprite)
     {
-        weapon=GetComponent<Weapons>();
+       spriteRenderer.sprite = GameManager.instance.playerSprites[sprite];
     }
-    private void HandleInput()
-    {
-        currentDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        if (Input.GetButtonDown("Fire1"))
-        {
-            weapon.Swing(currentDirection);
-        }
-    }
-    private void Update()
-    {
-       HandleInput();
-    }
+    //private void Start()
+    //{
+    //    weapon=GetComponent<Weapons>();
+    //}
+    //private void HandleInput()
+    //{
+    //    currentDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    //    if (Input.GetButtonDown("Fire1"))
+    //    {
+    //        weapon.Swing(currentDirection);
+    //    }
+    //}
+    //private void Update()
+    //{
+    //   HandleInput();
+    //}
    
     //public float moveSpeed;
 

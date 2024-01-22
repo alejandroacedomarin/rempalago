@@ -37,6 +37,7 @@ public class Menu : MonoBehaviour
     private void OnSelectionChanged()
     {
         characterSprite.sprite = GameManager.instance.playerSprites[currentCharacter];
+        GameManager.instance.player.CambiarAvatar(currentCharacter);
     }
 
     public void OnUpgradeClick()
@@ -50,13 +51,28 @@ public class Menu : MonoBehaviour
     public void UpdateMenu()
     {
         weaponSprite.sprite = GameManager.instance.weaponSprites[0];
-        upgradeText.text = "No hecho";
+        upgradeText.text = GameManager.instance.weaponPrices[GameManager.instance.weapon.weaponLevel].ToString();
 
         hitpointText.text= GameManager.instance.player.hitpoint.ToString();
         dineroText.text=GameManager.instance.dinerito.ToString();
-        levelText.text = "No hecho";
+        levelText.text = GameManager.instance.GetCurrentLev().ToString();
+        int currentLev=GameManager.instance.GetCurrentLev();
+        if(GameManager.instance.GetCurrentLev()==GameManager.instance.xpTables.Count)
+        {
+            xpText.text=GameManager.instance.experience.ToString()+"xp";
+            xpBar.localScale = Vector3.one;
+        }
+        else
+        {
+            int prevLevelXp = GameManager.instance.GetXpToLevel(currentLev-1);
+            int currLevelXp = GameManager.instance.GetXpToLevel(currentLev );
+            int dif=currLevelXp-prevLevelXp;
+            int currXpIntoLevel = GameManager.instance.experience - prevLevelXp;
+            float comp=(float) currXpIntoLevel/(float) dif;
+            xpBar.localScale = new Vector3(comp, 0, 0);
+            xpText.text = currXpIntoLevel.ToString()+" / "+dif;
+        }
 
-        xpText.text = "No hecho";
-        xpBar.localScale = new Vector3(0.5f, 0, 0);
+        
     }
 }

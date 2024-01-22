@@ -16,7 +16,10 @@ public class Weapons : Collidable
     private float lastSwing;
 
     public GameObject bulletPrefab;
-
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     protected override void Start()
     {
         base.Start();
@@ -53,28 +56,33 @@ public class Weapons : Collidable
                 origin = transform.position,
                 push = weaponPush[weaponLevel]
             };
-            collider.SendMessage("RecibirDa�o", dmg);
+            collider.SendMessage("RecibirDaño", dmg);
             Debug.Log(collider.name);
         }
         
     }
     public void Swing(Vector2 direction)
     {
-        Debug.Log("Swing! Direction: " + direction);
-        Vector3 spawnPosition =transform.position+new Vector3(direction.x, direction.y, 0);
-        GameObject bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
-        Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+        //Debug.Log("Swing! Direction: " + direction);
+        //Vector3 spawnPosition =transform.position+new Vector3(direction.x, direction.y, 0);
+        //GameObject bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
+        //Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
-        BulletScript bulletScript=bullet.GetComponent<BulletScript>();
+        //BulletScript bulletScript=bullet.GetComponent<BulletScript>();
         
-        if( bulletScript != null )
-        {
-            bulletScript.setDirection(direction);
-        }
+        //if( bulletScript != null )
+        //{
+        //    bulletScript.setDirection(direction);
+        //}
     }
     public void UpgradeWeapon()
     {
         weaponLevel++;
+        spriteRenderer.sprite = GameManager.instance.weaponSprites[weaponLevel];
+    }
+    public void SetWeaponLevel(int level)
+    {
+        weaponLevel=level;
         spriteRenderer.sprite = GameManager.instance.weaponSprites[weaponLevel];
     }
 }
